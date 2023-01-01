@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class MemoryMemberRepository implements MemberRepository {
 
-    private static Map<Long, Member> store = new HashMap<>();
+    private static Map<Long, Member> store = new HashMap<>();  // 실무에서는 동시성 이슈때문에 ConCurrentHashMap 사용하지만, 예제이기 때문에 HashMap 사용
 
     @Override
     public void save(Member member) {
