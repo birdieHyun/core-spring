@@ -7,6 +7,8 @@ import hello.core.member.MemberServiceImpl;
 
 public class MemberApp {
 
+    // 매번 이렇게 메인에서 테스트 할 순 없으니, JUnit 활용해서 테스트 진행
+
     public static void main(String[] args) {
 
         MemberService memberService = new MemberServiceImpl();
