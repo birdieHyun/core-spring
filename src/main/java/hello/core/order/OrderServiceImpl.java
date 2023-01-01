@@ -9,12 +9,19 @@ import hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+//    private final MemberRepository memberRepository = new MemoryMemberRepository();
+
     // OrderServiceImpl 은 DiscountPolicy 와 FixDiscountPolicy 모두에 의존하고 있다. 즉 추상과 구체 모두에게 의존하고 있다.
 //    private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
 //    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
-    private DiscountPolicy discountPolicy;
 
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {
@@ -25,3 +32,6 @@ public class OrderServiceImpl implements OrderService{
     }
     // 주문을 해서 반환해주는 역할을 담당
 }
+
+
+// 인터페이스에만 의존하고 있다.

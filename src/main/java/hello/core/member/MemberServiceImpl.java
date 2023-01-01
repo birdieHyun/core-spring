@@ -11,7 +11,11 @@ package hello.core.member;
 public class MemberServiceImpl implements MemberService { // 구현체가 하나만 있으면 인터페이스명 뒤에 Impl 만 붙인다.
 
     // 인터페이스를 생성하기 위해서는 구현 객체를 생성해 주어야 한다. 여기서는 방금 만든 메모리멤버리파지토리 넣는다.
-    private MemberRepository memberRepository = new MemoryMemberRepository();
+    private MemberRepository memberRepository;
+
+    public MemberServiceImpl(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     @Override
     public void join(Member member) {
