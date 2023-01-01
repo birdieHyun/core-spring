@@ -1,6 +1,6 @@
 package hello.core.member;
 
-enum  Grade {
+public enum  Grade {
     BASIC,
     VIP
 }
