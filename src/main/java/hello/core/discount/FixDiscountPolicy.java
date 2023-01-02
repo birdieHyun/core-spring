@@ -9,7 +9,7 @@ public class FixDiscountPolicy implements DiscountPolicy {
 
     @Override
     public int discount(Member member, int price) {
-        if (member.getGrade() == Grade.VIP) {   // enum 타입은 '==' 을 쓰는 것이 맞다.
+        if (member.getGrade() == Grade.VIP) {
             return discountFixAmount;
         } else {
             return 0;
