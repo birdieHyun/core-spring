@@ -28,7 +28,7 @@ public class PrototypeTest {
         ac.close();
 
         bean1.destroy();
-        bean2.destroy();ㅈ
+        bean2.destroy();
     }
 
     @Scope("prototype")
